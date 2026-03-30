@@ -12,6 +12,10 @@ app.get("/", (req, res) => {
 
 app.use("/users", userRoutes);
 
+app.get("/health", (req, res)=>{
+  res.status(200).json({ message: "Server is healthy" });
+})
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
